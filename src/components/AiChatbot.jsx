@@ -4,41 +4,41 @@ import { FaRobot, FaPaperPlane, FaTimes, FaMicrophone } from "react-icons/fa";
 
 const AiChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Chat Data
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hello! I am GrainBot. How can I help you today?",
+      text: "Hello! I am GrainBot. How can I help you today? Ask about prices or tracking.",
       sender: "bot",
     },
   ]);
   const [inputText, setInputText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-
   const messagesEndRef = useRef(null);
 
-  // Auto-scroll to bottom
+  // Auto-scroll
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  // Toggle Chat function
   const toggleChat = () => setIsOpen(!isOpen);
 
+  // ================= SEND LOGIC =================
   const handleSend = () => {
     if (!inputText.trim()) return;
 
-    // 1. Add User Message
     const userMsg = { id: Date.now(), text: inputText, sender: "user" };
     setMessages((prev) => [...prev, userMsg]);
     setInputText("");
     setIsTyping(true);
 
-    // 2. Simulate AI Response (Replace this with API Call later)
     setTimeout(() => {
       let botResponse =
         "I am currently in simulation mode. Connect me to OpenAI to make me smart!";
-
-      // Simple Keyword Logic for Demo
       const lowerInput = userMsg.text.toLowerCase();
+
       if (lowerInput.includes("price") || lowerInput.includes("rate")) {
         botResponse =
           "Today's rate for Super Kernel Basmati is Rs. 11,800/40kg.";
@@ -61,18 +61,8 @@ const AiChatbot = () => {
 
   return (
     <div className="chatbot-wrapper">
-      {/* Floating Toggle Button */}
-      <button
-        className={`chatbot-toggle ${isOpen ? "hide" : ""}`}
-        onClick={toggleChat}
-      >
-        <FaRobot className="toggle-icon" />
-        <span className="toggle-text">Ask AI</span>
-      </button>
-
       {/* Chat Window */}
       <div className={`chatbot-window ${isOpen ? "open" : ""}`}>
-        {/* Header */}
         <div className="chatbot-header">
           <div className="header-info">
             <FaRobot />
@@ -83,7 +73,6 @@ const AiChatbot = () => {
           </button>
         </div>
 
-        {/* Messages Area */}
         <div className="chatbot-messages">
           {messages.map((msg) => (
             <div key={msg.id} className={`message ${msg.sender}`}>
@@ -102,7 +91,6 @@ const AiChatbot = () => {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input Area */}
         <div className="chatbot-input">
           <input
             type="text"
@@ -111,7 +99,7 @@ const AiChatbot = () => {
             onChange={(e) => setInputText(e.target.value)}
             onKeyPress={handleKeyPress}
           />
-          <button className="voice-btn" title="Voice Input (Coming Soon)">
+          <button className="voice-btn">
             <FaMicrophone />
           </button>
           <button className="send-btn" onClick={handleSend}>
@@ -119,6 +107,15 @@ const AiChatbot = () => {
           </button>
         </div>
       </div>
+
+      {/* Floating Toggle Button */}
+      <button
+        className={`chatbot-toggle ${isOpen ? "hide" : ""}`}
+        onClick={toggleChat}
+      >
+        <FaRobot className="toggle-icon" />
+        <span className="toggle-text">Ask AI</span>
+      </button>
     </div>
   );
 };
