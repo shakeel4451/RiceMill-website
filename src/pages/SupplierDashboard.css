@@ -12,7 +12,7 @@
 
 .page-title {
   margin-bottom: 30px;
-  color: #3e5235; /* Olive Green Title */
+  color: #3e5235;
   font-size: 30px;
 }
 
@@ -40,13 +40,13 @@
 
 .stat-icon.calendar {
   color: #f57c00;
-} /* Orange */
+}
 .stat-icon.money {
   color: #2e7d32;
-} /* Green */
+}
 .stat-icon.check {
   color: #1976d2;
-} /* Blue */
+}
 
 .stat-info p {
   color: #777;
@@ -87,7 +87,7 @@
 
 /* Demand Widget */
 .demand-card {
-  border-left: 6px solid #3e5235; /* Green highlight */
+  border-left: 6px solid #3e5235;
 }
 
 .demand-qty {
@@ -101,7 +101,7 @@
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 25px;
-  color: #8c734b; /* Gold rate */
+  color: #8c734b;
 }
 
 .confirm-btn {
@@ -142,20 +142,6 @@
   border-bottom: 1px solid #f9f9f9;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .supplier-layout {
-    flex-direction: column;
-  }
-  .supplier-sidebar {
-    display: none;
-  }
-  .stats-row,
-  .dashboard-grid {
-    flex-direction: column;
-  }
-}
-
 /* --- Generic Form Input Styles --- */
 .input-field-group {
   margin-bottom: 20px;
@@ -180,7 +166,7 @@
 
 .input-with-icon svg {
   margin-right: 10px;
-  color: #8c734b; /* Gold icon color */
+  color: #8c734b;
 }
 
 .input-with-icon input,
@@ -241,7 +227,7 @@
 }
 
 input:checked + .slider {
-  background-color: #3e5235; /* Olive Green ON color */
+  background-color: #3e5235;
 }
 
 input:focus + .slider {
@@ -276,7 +262,7 @@ input:checked + .slider:before {
   justify-content: center;
   gap: 10px;
   padding: 20px;
-  border: 2px dashed #8c734b; /* Gold dashed border */
+  border: 2px dashed #8c734b;
   border-radius: 10px;
   color: #8c734b;
   font-weight: 600;
@@ -287,7 +273,7 @@ input:checked + .slider:before {
 }
 
 .upload-label:hover {
-  background-color: #fff8e1; /* Light yellow background on hover */
+  background-color: #fff8e1;
 }
 
 .file-preview {
@@ -320,7 +306,7 @@ input:checked + .slider:before {
 /* --- Analysis Results Styles --- */
 
 .results-card {
-  background-color: #f7fff7; /* Very light green background */
+  background-color: #f7fff7;
 }
 
 .result-box {
@@ -333,4 +319,31 @@ input:checked + .slider:before {
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #eee;
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS FIXES
+   ========================= */
+@media (max-width: 900px) {
+  .supplier-layout {
+    flex-direction: column;
+  }
+
+  .stats-row,
+  .dashboard-grid {
+    flex-direction: column;
+  }
+
+  .supplier-content {
+    padding-top: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .card {
+    overflow-x: auto;
+  }
+  .supplier-table {
+    min-width: 600px;
+  }
 }

@@ -187,19 +187,6 @@
   color: #0056b3;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .customer-layout {
-    flex-direction: column;
-  }
-  .customer-sidebar {
-    display: none; /* Hide sidebar on mobile for now */
-  }
-  .stats-row,
-  .dashboard-grid {
-    flex-direction: column;
-  }
-}
 /* Tracking Timeline Styles */
 .tracking-timeline {
   display: flex;
@@ -262,6 +249,7 @@
   font-size: 13px;
   color: #777;
 }
+
 /* --- Generic Form Input Styles --- */
 .input-field-group {
   margin-bottom: 20px;
@@ -365,4 +353,39 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS FIXES
+   ========================= */
+@media (max-width: 900px) {
+  .customer-layout {
+    flex-direction: column;
+  }
+
+  /* CRITICAL FIX: REMOVE this line. The JS now controls sidebar visibility. */
+  .customer-sidebar {
+    /* REMOVED: display: none; */
+  }
+
+  /* FIX: Stack rows vertically */
+  .stats-row,
+  .dashboard-grid {
+    flex-direction: column;
+  }
+
+  /* NEW CRITICAL FIX: Add padding to free the Menu Button */
+  .customer-content {
+    padding-top: 60px; /* Add buffer space for the floating Menu Toggle */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Ensure tables are scrollable */
+  .card {
+    overflow-x: auto;
+  }
+  .customer-table {
+    min-width: 600px; /* Forces horizontal scroll */
+  }
 }

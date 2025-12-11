@@ -145,3 +145,24 @@
 .logout-btn:hover {
   background-color: #b71c1c;
 }
+
+/* Add this at the bottom */
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px;
+    height: auto; /* Allow it to grow */
+  }
+
+  .navbar-links {
+    margin-top: 15px;
+    flex-wrap: wrap; /* Allow links to wrap to next line */
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .navbar-brand {
+    margin-bottom: 5px;
+  }
+}

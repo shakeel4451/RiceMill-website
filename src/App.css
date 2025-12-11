@@ -45,3 +45,44 @@ a {
 ul {
   list-style: none;
 }
+
+/* =========================
+   MOBILE RESPONSIVENESS
+   ========================= */
+
+@media (max-width: 900px) {
+  /* 1. Global Layout: Stack Sidebar and Content */
+  .admin-layout,
+  .customer-layout,
+  .supplier-layout {
+    flex-direction: column;
+    position: relative; /* Needed for absolute positioning of sidebar */
+  }
+
+  /* 2. Dashboards: Stack Widgets Vertically */
+  .dashboard-grid {
+    flex-direction: column !important; /* Force stack */
+  }
+
+  .stats-row {
+    flex-direction: column !important;
+  }
+
+  /* 3. Cards: Remove fixed widths or flex restrictions */
+  .card,
+  .stat-card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  /* 4. Tables: Make them scrollable horizontally */
+  .card {
+    overflow-x: auto; /* Adds scrollbar if table is too wide */
+  }
+
+  .admin-table,
+  .customer-table,
+  .supplier-table {
+    min-width: 600px; /* Force table to keep shape, user scrolls */
+  }
+}

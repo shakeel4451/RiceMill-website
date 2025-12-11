@@ -11,6 +11,7 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
+  z-index: 10;
 }
 
 /* Dark Overlay to make text readable */
@@ -28,9 +29,14 @@
 /* The Glass Card */
 .login-card {
   position: relative;
-  z-index: 2;
+  z-index: 100;
   background: rgba(255, 255, 255, 0.95);
-  width: 420px;
+
+  /* RESPONSIVE WIDTH FIX */
+  width: 90%; /* Take up 90% of screen width */
+  max-width: 420px; /* But never wider than 420px */
+  margin: 20px; /* Add margin for safety on mobile */
+
   padding: 40px;
   border-radius: 16px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
@@ -183,4 +189,26 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 20px; /* Reduce padding on small screens */
+  }
+
+  .role-switcher {
+    flex-wrap: wrap; /* Allow buttons to stack if needed */
+  }
+
+  .role-btn {
+    font-size: 12px; /* Smaller text */
+    padding: 8px;
+  }
+}
+
+.login-form input,
+.role-btn {
+  cursor: pointer;
+  position: relative;
+  z-index: 101;
 }

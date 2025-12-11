@@ -112,6 +112,10 @@
   background: #e8f5e9;
   color: #2e7d32;
 }
+.status.error {
+  background: #ffebee;
+  color: #d32f2f;
+}
 
 /* 4. Map Styles */
 .map-placeholder {
@@ -140,16 +144,6 @@
   border-radius: 50%;
   position: absolute;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .dashboard-grid {
-    flex-direction: column;
-  }
-  .admin-sidebar {
-    display: none; /* Hide sidebar on mobile for now */
-  }
 }
 
 /* =========================
@@ -199,4 +193,38 @@
 
 .action-btn:hover {
   background-color: #f0f0f0;
+}
+
+/* =========================
+   FINAL MOBILE RESPONSIVENESS FIXES
+   ========================= */
+@media (max-width: 900px) {
+  /* FIX 1: Ensure main content stacks */
+  .dashboard-grid,
+  .inventory-stats {
+    flex-direction: column !important;
+  }
+
+  /* FIX 2: Correcting Sidebar display and adding buffer for Menu button */
+  .admin-sidebar {
+    /* REMOVED: display: none; This allows the JS toggle logic to work */
+    /* The sidebar is now hidden/shown via transform: translateX in AdminSidebar.css */
+    /* If you still had 'display: none' from previous steps, remove it. */
+  }
+
+  .admin-content {
+    /* CRITICAL FIX: Add padding to start content below the floating Menu Toggle button */
+    padding-top: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Ensure tables are scrollable on small screens */
+  .card {
+    overflow-x: auto;
+  }
+
+  .admin-table {
+    min-width: 600px; /* Forces horizontal scroll */
+  }
 }
