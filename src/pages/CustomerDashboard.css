@@ -12,7 +12,7 @@
 
 .page-title {
   margin-bottom: 30px;
-  color: #3e5235; /* Olive Green Title */
+  color: #3e5235;
   font-size: 30px;
 }
 
@@ -40,13 +40,13 @@
 
 .stat-icon.check {
   color: #2e7d32;
-} /* Green */
+}
 .stat-icon.truck {
   color: #1976d2;
-} /* Blue */
+}
 .stat-icon.cart {
   color: #8c734b;
-} /* Gold */
+}
 
 .stat-info p {
   color: #777;
@@ -274,7 +274,7 @@
 
 .input-with-icon svg {
   margin-right: 10px;
-  color: #8c734b; /* Gold icon color */
+  color: #8c734b;
 }
 
 .input-with-icon input,
@@ -335,7 +335,7 @@
 }
 
 input:checked + .slider {
-  background-color: #3e5235; /* Olive Green ON color */
+  background-color: #3e5235;
 }
 
 input:focus + .slider {
@@ -363,11 +363,6 @@ input:checked + .slider:before {
     flex-direction: column;
   }
 
-  /* CRITICAL FIX: REMOVE this line. The JS now controls sidebar visibility. */
-  .customer-sidebar {
-    /* REMOVED: display: none; */
-  }
-
   /* FIX: Stack rows vertically */
   .stats-row,
   .dashboard-grid {
@@ -376,7 +371,7 @@ input:checked + .slider:before {
 
   /* NEW CRITICAL FIX: Add padding to free the Menu Button */
   .customer-content {
-    padding-top: 60px; /* Add buffer space for the floating Menu Toggle */
+    padding-top: 60px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -386,6 +381,6 @@ input:checked + .slider:before {
     overflow-x: auto;
   }
   .customer-table {
-    min-width: 600px; /* Forces horizontal scroll */
+    min-width: 600px;
   }
 }
