@@ -1,0 +1,47 @@
+/* =========================
+   Global Resets
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fcfcfc; /* Very light grey background to reduce eye strain */
+  color: #333;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================
+   App Layout (Sticky Footer)
+   ========================= */
+/* This ensures the Footer always stays at the bottom, even on short pages */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Forces the app to take full screen height */
+}
+
+/* Make these pages expand to fill empty space */
+.home-container,
+.about-container,
+.products-page,
+.login-container {
+  flex: 1; /* Pushes the footer down */
+}
+
+/* =========================
+   Common Utility Classes
+   ========================= */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}

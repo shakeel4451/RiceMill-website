@@ -1,0 +1,48 @@
+.admin-sidebar {
+  width: 250px;
+  background-color: #fff;
+  border-right: 1px solid #e0e0e0;
+  height: calc(100vh - 80px); /* Full height minus navbar */
+  position: sticky;
+  top: 80px; /* Below navbar */
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  background-color: #8c734b; /* Gold Header */
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.sidebar-menu li a:hover {
+  background-color: #f4f4f4;
+  color: #3e5235;
+}
+
+.sidebar-menu li.active a {
+  background-color: #e8f5e9; /* Light Green background */
+  color: #3e5235; /* Dark Green Text */
+  border-left: 4px solid #3e5235; /* Active indicator */
+}
