@@ -15,6 +15,7 @@ import SupplierQuality from "./pages/SupplierQuality";
 import CustomerHistory from "./pages/CustomerHistory";
 import CustomerTracking from "./pages/CustomerTracking";
 import CustomerTraceability from "./pages/CustomerTraceability";
+import AiChatbot from "./components/AiChatbot";
 import "./App.css";
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
           />
         </Routes>
         <Footer />
+        <AiChatbot />
       </div>
     </Router>
   );
